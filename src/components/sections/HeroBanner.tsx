@@ -1,22 +1,85 @@
-import { motion } from 'motion/react'
 import {
   GraduationCap,
   Laptop,
   UsersThree,
   Briefcase,
   ArrowRight,
+  ArrowUpRight,
   Star,
   ChartLineUp,
   CaretRight,
+  Code,
+  ChartBar,
+  Cloud,
+  PenNib,
+  DeviceMobile,
+  Sparkle,
 } from '@phosphor-icons/react'
+
+const POPULAR_TRACKS = [
+  {
+    role: 'Full Stack Development',
+    highlight: 'MERN · Next.js · TS',
+    icon: Code,
+    accent: '#155EEF',
+    iconBg: '#EFF6FF',
+    badge: 'High Demand',
+    href: '#courses',
+  },
+  {
+    role: 'Data Science & AI',
+    highlight: 'Python · ML · GenAI',
+    icon: ChartBar,
+    accent: '#7C3AED',
+    iconBg: '#F5F3FF',
+    badge: 'Trending',
+    href: '#courses',
+  },
+  {
+    role: 'Cloud & DevOps',
+    highlight: 'AWS · Docker · K8s',
+    icon: Cloud,
+    accent: '#059669',
+    iconBg: '#ECFDF5',
+    badge: 'Enterprise',
+    href: '#courses',
+  },
+  {
+    role: 'UI/UX Design',
+    highlight: 'Figma · Design Systems',
+    icon: PenNib,
+    accent: '#DB2777',
+    iconBg: '#FDF2F8',
+    badge: 'Creative',
+    href: '#courses',
+  },
+  {
+    role: 'Mobile App Dev',
+    highlight: 'Flutter · iOS · Android',
+    icon: DeviceMobile,
+    accent: '#EA580C',
+    iconBg: '#FFF7ED',
+    badge: 'Fast Track',
+    href: '#courses',
+  },
+  {
+    role: '1-on-1 Mentorship',
+    highlight: 'Top Tech Leads',
+    icon: UsersThree,
+    accent: '#0284C7',
+    iconBg: '#F0F9FF',
+    badge: 'Personalized',
+    href: '#mentors',
+  },
+]
 
 export default function HeroBanner() {
   return (
-    <section id="hero" className="py-4 sm:py-6 bg-white">
-      <div className="container">
-        {/* Contained Hero Card - Exactly matching the reference image */}
+    <section id="hero" className="pt-4 sm:pt-6 pb-12 sm:pb-16 bg-white relative">
+      <div className="container relative">
+        {/* Contained Hero Card (Light Ice Blue with Ambient Glow) */}
         <div
-          className="relative rounded-3xl md:rounded-[32px] overflow-hidden border border-[#DBEAFE]/80 p-6 sm:p-10 lg:p-12 xl:p-14"
+          className="relative rounded-3xl md:rounded-[36px] overflow-hidden border border-[#DBEAFE]/80 p-6 sm:p-10 lg:p-12 xl:p-14 pb-20 sm:pb-24 lg:pb-28"
           style={{
             background: 'linear-gradient(135deg, #F0F6FF 0%, #E8F1FD 50%, #F5F9FF 100%)',
           }}
@@ -27,6 +90,7 @@ export default function HeroBanner() {
             style={{ background: 'radial-gradient(circle, rgba(21, 94, 239, 0.15) 0%, transparent 70%)' }}
           />
 
+          {/* Top Section: Headlines & Mentors */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
             {/* Left Column: Admissions, Headline, Bullets, CTAs */}
             <div className="lg:col-span-7 flex flex-col items-start">
@@ -168,9 +232,75 @@ export default function HeroBanner() {
 
           {/* Carousel Slide Indicators */}
           <div className="pt-8 sm:pt-10 flex items-center justify-center gap-2 relative z-10">
-            <span className="w-6 h-2 bg-[#155EEF] rounded-full inline-block" />
-            <span className="w-2 h-2 bg-slate-300 rounded-full inline-block" />
-            <span className="w-2 h-2 bg-slate-300 rounded-full inline-block" />
+            <span className="w-8 h-1.5 bg-[#155EEF] rounded-full inline-block" />
+            <span className="w-8 h-1.5 bg-slate-300/80 rounded-full inline-block" />
+            <span className="w-8 h-1.5 bg-slate-300/80 rounded-full inline-block" />
+            <span className="w-8 h-1.5 bg-slate-300/80 rounded-full inline-block" />
+            <span className="w-8 h-1.5 bg-slate-300/80 rounded-full inline-block" />
+          </div>
+        </div>
+
+        {/* CareerCatch Signature Popular Tracks Dock (Inspired by Vedantu, crafted for CareerCatch) */}
+        <div className="-mt-14 sm:-mt-18 lg:-mt-22 relative z-20 px-2 sm:px-4 max-w-6xl mx-auto">
+          <div className="bg-white/95 backdrop-blur-md rounded-2xl md:rounded-[28px] border border-slate-200/80 p-5 sm:p-7 shadow-[0_20px_50px_-12px_rgba(21,94,239,0.10)]">
+            {/* Header: Branded Pill + Subtext + Action */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 sm:mb-6">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#155EEF]/10 border border-[#155EEF]/20 text-[#155EEF] font-bold text-xs uppercase tracking-wider">
+                  <Sparkle size={13} weight="fill" className="text-[#FF9F1C]" />
+                  <span>Popular Career Tracks</span>
+                </span>
+                <span className="text-xs sm:text-sm text-slate-500 font-medium hidden md:inline">
+                  Industry-designed paths with live cohorts and verified placement records
+                </span>
+              </div>
+
+              <a
+                href="#courses"
+                className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#155EEF] hover:text-[#124BBF] group shrink-0"
+              >
+                <span>View all programs</span>
+                <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+
+            {/* 6 High-Trust Career Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5">
+              {POPULAR_TRACKS.map((item) => {
+                const Icon = item.icon
+                return (
+                  <a
+                    key={item.role}
+                    href={item.href}
+                    className="group relative flex flex-col justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white hover:bg-[#F0F6FF]/40 border border-slate-200/80 hover:border-[#155EEF]/40 shadow-2xs hover:shadow-md hover:shadow-blue-500/8 transition-all duration-200 hover:-translate-y-1 text-decoration-none min-h-[135px] sm:min-h-[142px]"
+                  >
+                    {/* Top: Domain Icon + Micro Action Arrow */}
+                    <div className="flex items-center justify-between">
+                      <div
+                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transition-transform group-hover:scale-108 duration-200"
+                        style={{ backgroundColor: item.iconBg, color: item.accent }}
+                      >
+                        <Icon size={22} weight="duotone" />
+                      </div>
+
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-100 group-hover:bg-[#155EEF] text-slate-400 group-hover:text-white flex items-center justify-center transition-all duration-200 shrink-0">
+                        <ArrowUpRight size={12} weight="bold" />
+                      </div>
+                    </div>
+
+                    {/* Content: Role Title + Tech Stack Highlights */}
+                    <div className="mt-3">
+                      <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-xs sm:text-[13px] text-[#101B3C] group-hover:text-[#155EEF] transition-colors leading-snug line-clamp-2 mb-1">
+                        {item.role}
+                      </h3>
+                      <p className="text-[11px] text-slate-500 font-medium leading-tight truncate">
+                        {item.highlight}
+                      </p>
+                    </div>
+                  </a>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
