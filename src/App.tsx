@@ -1,6 +1,5 @@
 import Navbar from './components/layout/Navbar'
 import HeroBanner from './components/sections/HeroBanner'
-import MainCourseCTA from './components/sections/MainCourseCTA'
 import Introduction from './components/sections/Introduction'
 import PopularCourses from './components/sections/PopularCourses'
 import CourseCategories from './components/sections/CourseCategories'
@@ -20,23 +19,20 @@ import Footer from './components/layout/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-['Inter_Tight'] selection:bg-[#1D4ED8]/15 selection:text-[#0F172A]">
+    <div className="min-h-screen bg-white text-[#101B3C] font-['Inter'] selection:bg-[#155EEF]/15 selection:text-[#101B3C]">
       <Navbar />
 
       <main>
-        {/* S02: Hero Banner */}
+        {/* S01: Hero Banner (Exact match to Reference Mockup) */}
         <HeroBanner />
 
-        {/* S03: Main Course CTA */}
-        <MainCourseCTA />
-
-        {/* S04: Introduction */}
-        <Introduction />
-
-        {/* S05: Popular Courses */}
+        {/* S02: Popular Courses - Find your next skill (Exact 6 cards from Mockup) */}
         <PopularCourses />
 
-        {/* S06: Course Categories */}
+        {/* S03: Introduction - Learn by building real things (Exact match to Mockup bottom) */}
+        <Introduction />
+
+        {/* S04: Course Categories */}
         <CourseCategories />
 
         {/* S07: Technologies We Teach */}

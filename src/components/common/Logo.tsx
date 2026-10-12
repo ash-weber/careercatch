@@ -1,57 +1,45 @@
 interface LogoProps {
   className?: string
   iconSize?: number
-  showDot?: boolean
 }
 
-export default function Logo({ className = '', iconSize = 38, showDot = true }: LogoProps) {
+export default function Logo({ className = '', iconSize = 34 }: LogoProps) {
   return (
     <a
       href="/"
       className={`inline-flex items-center gap-2.5 text-decoration-none group select-none ${className}`}
       aria-label="CareerCatch Home"
     >
-      {/* Icon Badge */}
+      {/* Exact circular emblem from reference: Blue arc with vibrant Orange spark */}
       <div
-        className="rounded-xl flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105"
-        style={{
-          width: iconSize,
-          height: iconSize,
-          background: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
-          border: '1px solid #BFDBFE',
-          boxShadow: '0 1px 2px rgba(37, 99, 235, 0.08)',
-        }}
+        className="rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105"
+        style={{ width: iconSize, height: iconSize }}
       >
-        <svg
-          width={Math.round(iconSize * 0.62)}
-          height={Math.round(iconSize * 0.62)}
-          viewBox="0 0 28 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Outer Catch arc */}
+        <svg width={iconSize} height={iconSize} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Main electric blue arc */}
           <path
-            d="M20.5 7.8C18.5 5.5 15.5 4 12 4C6.48 4 2 8.48 2 14C2 19.52 6.48 24 12 24C15.5 24 18.5 22.5 20.5 20.2"
-            stroke="#2563EB"
-            strokeWidth="3.2"
+            d="M16 4C9.37 4 4 9.37 4 16C4 22.63 9.37 28 16 28C21.4 28 25.95 24.45 27.5 19.5"
+            stroke="#155EEF"
+            strokeWidth="3.5"
             strokeLinecap="round"
           />
-          {/* Inner focus arc */}
+          {/* Vibrant warm orange accent arc */}
           <path
-            d="M17.5 10.5C16.2 9.2 14.2 8.5 12 8.5C8.96 8.5 6.5 10.96 6.5 14C6.5 17.04 8.96 19.5 12 19.5C14.2 19.5 16.2 18.8 17.5 17.5"
-            stroke="#3B82F6"
-            strokeWidth="2.4"
+            d="M27.8 13.5C27.2 9.8 24.6 6.8 21.2 5.2"
+            stroke="#FF9F1C"
+            strokeWidth="3.5"
             strokeLinecap="round"
           />
-          {/* Amber opportunity spark dot */}
-          <circle cx="13" cy="14" r="2.8" fill="#F59E0B" />
+          {/* Inner blue dot */}
+          <circle cx="15.5" cy="16" r="3.2" fill="#155EEF" />
+          {/* Inner orange spark */}
+          <circle cx="19.5" cy="12" r="1.8" fill="#FF9F1C" />
         </svg>
       </div>
 
-      {/* Brand Name */}
-      <span className="font-['Outfit'] font-black text-xl md:text-2xl tracking-tight text-slate-900 leading-none">
+      {/* Brand Name in Navy */}
+      <span className="font-['Plus_Jakarta_Sans'] font-extrabold text-[21px] tracking-tight text-[#101B3C] leading-none">
         CareerCatch
-        {showDot && <span className="text-[#F59E0B]">.</span>}
       </span>
     </a>
   )

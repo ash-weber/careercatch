@@ -28,7 +28,7 @@ const COURSE_TRACKS = [
     title: 'Full Stack Development',
     desc: 'MERN, Next.js, System Design',
     icon: Code,
-    color: '#2563EB',
+    color: '#155EEF',
   },
   {
     title: 'Data Science & AI',
@@ -37,28 +37,28 @@ const COURSE_TRACKS = [
     color: '#7C3AED',
   },
   {
-    title: 'UI/UX Product Design',
+    title: 'UI/UX Design',
     desc: 'Figma, Design Systems, Research',
     icon: PenNib,
-    color: '#D97706',
+    color: '#FF9F1C',
   },
   {
     title: 'Cloud & DevOps',
     desc: 'AWS, Docker, Kubernetes',
     icon: Cloud,
-    color: '#0284C7',
-  },
-  {
-    title: 'Mobile Development',
-    desc: 'Flutter, React Native, iOS',
-    icon: DeviceMobile,
     color: '#059669',
   },
   {
-    title: 'Cybersecurity',
-    desc: 'Ethical Hacking, Network Defense',
+    title: 'Mobile App Development',
+    desc: 'Flutter, React Native, iOS',
+    icon: DeviceMobile,
+    color: '#EA580C',
+  },
+  {
+    title: '1-on-1 Mentorship',
+    desc: 'Mock Interviews & Code Reviews',
     icon: ShieldCheck,
-    color: '#DC2626',
+    color: '#0284C7',
   },
 ]
 
@@ -69,12 +69,11 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 15)
+    const handleScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -88,19 +87,17 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-200 ${
-          scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200'
-            : 'bg-white border-b border-slate-200/80'
+        className={`sticky top-0 z-50 transition-all duration-200 bg-white ${
+          scrolled ? 'shadow-xs border-b border-slate-200/80' : 'border-b border-slate-100'
         }`}
-        style={{ height: '70px' }}
+        style={{ height: '68px' }}
       >
         <div className="container h-full flex items-center justify-between gap-4">
           {/* Left: Brand Logo + Courses Button */}
-          <div className="flex items-center gap-5 sm:gap-6 shrink-0">
-            <Logo iconSize={36} />
+          <div className="flex items-center gap-4 sm:gap-5 shrink-0">
+            <Logo />
 
-            {/* Vedantu-style Pill Courses Button */}
+            {/* Courses Outline Pill Button */}
             <div
               ref={dropdownRef}
               className="relative"
@@ -110,48 +107,34 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setCoursesOpen(!coursesOpen)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border-2 font-semibold text-sm transition-all cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   coursesOpen
-                    ? 'border-blue-600 bg-blue-50/60 text-blue-700 shadow-xs'
-                    : 'border-blue-600 text-blue-600 hover:bg-blue-50/40 hover:text-blue-700'
+                    ? 'border-[#155EEF] bg-blue-50/50 text-[#155EEF]'
+                    : 'border-slate-300 hover:border-slate-400 text-slate-700 bg-white'
                 }`}
                 aria-expanded={coursesOpen}
-                aria-haspopup="true"
               >
                 <span>Courses</span>
                 <CaretDown
-                  size={15}
+                  size={14}
                   weight="bold"
                   className={`transition-transform duration-200 ${
-                    coursesOpen ? 'rotate-180 text-blue-700' : 'text-blue-600'
+                    coursesOpen ? 'rotate-180 text-[#155EEF]' : 'text-slate-500'
                   }`}
                 />
               </button>
 
-              {/* Courses Mega Dropdown Menu */}
+              {/* Courses Dropdown */}
               <AnimatePresence>
                 {coursesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                    transition={{ duration: 0.18, ease: 'easeOut' }}
-                    className="absolute left-0 top-[calc(100%+10px)] w-88 md:w-[460px] bg-white border border-slate-200 rounded-2xl shadow-xl p-5 z-50"
+                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                    transition={{ duration: 0.16 }}
+                    className="absolute left-0 top-[calc(100%+8px)] w-84 md:w-[420px] bg-white border border-slate-200 rounded-2xl shadow-xl p-4 z-50"
                   >
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
-                      <span className="text-xs uppercase font-bold tracking-wider text-slate-500">
-                        Explore Learning Tracks
-                      </span>
-                      <a
-                        href="#courses"
-                        onClick={() => setCoursesOpen(false)}
-                        className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
-                      >
-                        All Courses <ArrowRight size={13} />
-                      </a>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {COURSE_TRACKS.map((track) => {
                         const Icon = track.icon
                         return (
@@ -159,16 +142,16 @@ export default function Navbar() {
                             key={track.title}
                             href="#courses"
                             onClick={() => setCoursesOpen(false)}
-                            className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                            className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors group"
                           >
                             <div
-                              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border border-slate-200/70"
+                              className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                               style={{ backgroundColor: `${track.color}15`, color: track.color }}
                             >
-                              <Icon size={20} weight="duotone" />
+                              <Icon size={18} weight="duotone" />
                             </div>
                             <div className="min-w-0">
-                              <h4 className="text-xs font-bold text-slate-800 group-hover:text-blue-600 transition-colors leading-snug truncate">
+                              <h4 className="text-xs font-bold text-[#101B3C] group-hover:text-[#155EEF] transition-colors leading-tight truncate">
                                 {track.title}
                               </h4>
                               <p className="text-[11px] text-slate-500 leading-tight mt-0.5 truncate">
@@ -179,54 +162,41 @@ export default function Navbar() {
                         )
                       })}
                     </div>
-
-                    <div className="mt-4 pt-3 border-t border-slate-100 bg-slate-50/70 -mx-5 -mb-5 px-5 py-3 rounded-b-2xl flex items-center justify-between text-xs">
-                      <span className="text-slate-600 font-medium">
-                        Need help picking a track?
-                      </span>
-                      <a
-                        href="#enquiry"
-                        onClick={() => setCoursesOpen(false)}
-                        className="font-bold text-blue-700 hover:text-blue-800"
-                      >
-                        Free Career Guidance &rarr;
-                      </a>
-                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
           </div>
 
-          {/* Center: Clean Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
+          {/* Center Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[15px] font-semibold text-slate-700 hover:text-blue-600 transition-colors"
+                className="text-[14px] font-medium text-slate-600 hover:text-[#155EEF] transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right: Expert Call + Sign In + Enroll Now (Desktop) */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-5 shrink-0">
-            {/* Talk to an expert widget */}
+          {/* Right Action Items */}
+          <div className="hidden md:flex items-center gap-3.5 lg:gap-4 shrink-0">
+            {/* Talk to our expert */}
             <a
               href="tel:18008902282"
-              className="flex items-center gap-2.5 group text-decoration-none mr-1"
-              aria-label="Talk to an academic expert at 1800-890-2282"
+              className="flex items-center gap-2 group text-decoration-none mr-1"
+              aria-label="Talk to our expert at 1800-890-2282"
             >
-              <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 group-hover:bg-blue-100/70 group-hover:border-blue-200 transition-colors shrink-0">
-                <PhoneCall size={17} weight="bold" />
+              <div className="w-8 h-8 rounded-full bg-blue-50 text-[#155EEF] flex items-center justify-center border border-blue-100 group-hover:bg-blue-100 transition-colors shrink-0">
+                <PhoneCall size={15} weight="bold" />
               </div>
               <div className="text-left">
-                <span className="text-[11px] font-medium text-slate-500 leading-none block mb-0.5 group-hover:text-slate-700 transition-colors">
-                  Talk to an expert
+                <span className="text-[11px] font-medium text-slate-500 leading-none block mb-0.5">
+                  Talk to our expert
                 </span>
-                <span className="text-sm font-bold text-slate-900 leading-none block tracking-tight">
+                <span className="text-[13px] font-bold text-[#101B3C] leading-none block tracking-tight">
                   1800-890-2282
                 </span>
               </div>
@@ -235,119 +205,70 @@ export default function Navbar() {
             {/* Sign In Button */}
             <a
               href="#enquiry"
-              className="px-4 py-2 rounded-lg border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 text-sm font-semibold transition-all shadow-xs"
+              className="px-3.5 py-1.5 rounded-lg border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-semibold transition-all shadow-xs"
             >
               Sign In
             </a>
 
             {/* Enroll Now Button */}
-            <motion.a
+            <a
               href="#enquiry"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-all shadow-sm shadow-blue-600/20"
+              className="px-4 py-1.5 rounded-lg bg-[#155EEF] hover:bg-[#124BBF] text-white text-xs sm:text-sm font-semibold transition-all shadow-xs inline-flex items-center gap-1.5 active:scale-[0.98]"
             >
-              Enroll Now
-            </motion.a>
+              <span>Enroll Now</span>
+              <ArrowRight size={14} weight="bold" />
+            </a>
           </div>
 
-          {/* Mobile Right Controls: Phone Icon + Hamburger */}
+          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href="tel:18008902282"
-              className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100"
-              aria-label="Call Expert"
-            >
-              <PhoneCall size={18} weight="bold" />
-            </a>
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 hover:bg-slate-100 transition-colors"
+              className="p-1.5 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
               aria-label="Toggle navigation menu"
             >
-              {mobileOpen ? <X size={24} /> : <List size={24} />}
+              {mobileOpen ? <X size={22} /> : <List size={22} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[70px] bg-white border-b border-slate-200 shadow-xl z-40 p-6 md:hidden max-h-[calc(100vh-70px)] overflow-y-auto"
+            transition={{ duration: 0.18 }}
+            className="fixed inset-x-0 top-[68px] bg-white border-b border-slate-200 shadow-xl z-40 p-5 md:hidden"
           >
-            {/* Call Expert Banner on Mobile */}
-            <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-100 flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0">
-                  <PhoneCall size={20} weight="bold" />
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500 font-medium block">
-                    Have doubts? Call free
-                  </span>
-                  <a
-                    href="tel:18008902282"
-                    className="text-base font-bold text-slate-900 block"
-                  >
-                    1800-890-2282
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Nav Links */}
-            <div className="space-y-1 mb-6">
+            <div className="space-y-1 mb-5">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                  className="block px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#155EEF] rounded-lg"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            {/* Popular Tracks Preview */}
-            <div className="pt-4 border-t border-slate-100 mb-6">
-              <span className="text-xs uppercase font-bold tracking-wider text-slate-400 block mb-3 px-3">
-                Popular Tracks
-              </span>
-              <div className="grid grid-cols-2 gap-2">
-                {COURSE_TRACKS.slice(0, 4).map((track) => (
-                  <a
-                    key={track.title}
-                    href="#courses"
-                    onClick={() => setMobileOpen(false)}
-                    className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/60 text-xs font-semibold text-slate-700 block truncate"
-                  >
-                    {track.title}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100">
               <a
                 href="#enquiry"
                 onClick={() => setMobileOpen(false)}
-                className="py-2.5 text-center rounded-lg border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                className="py-2 text-center rounded-lg border border-slate-300 text-slate-700 font-semibold text-xs"
               >
                 Sign In
               </a>
               <a
                 href="#enquiry"
                 onClick={() => setMobileOpen(false)}
-                className="py-2.5 text-center rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm"
+                className="py-2 text-center rounded-lg bg-[#155EEF] text-white font-semibold text-xs"
               >
                 Enroll Now
               </a>

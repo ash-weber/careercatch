@@ -1,159 +1,178 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
-import { ArrowRight, Users, Star, Briefcase } from '@phosphor-icons/react'
-
-const TRUST_STATS = [
-  { icon: Users, value: '10,000+', label: 'Students Enrolled' },
-  { icon: Star, value: '4.8 / 5', label: 'Learner Rating' },
-  { icon: Briefcase, value: '95%', label: 'Placement Support' },
-]
+import { motion } from 'motion/react'
+import {
+  GraduationCap,
+  Laptop,
+  UsersThree,
+  Briefcase,
+  ArrowRight,
+  Star,
+  ChartLineUp,
+  CaretRight,
+} from '@phosphor-icons/react'
 
 export default function HeroBanner() {
-  const ref = useRef<HTMLDivElement>(null)
-  const prefersReduced = useReducedMotion()
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  })
-  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
-
-  const wordAnim = (delay: number) => prefersReduced ? {} : {
-    initial: { opacity: 0, y: 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] as const },
-  }
-
   return (
-    <section
-      ref={ref}
-      id="hero"
-      style={{
-        position: 'relative',
-        minHeight: '92dvh',
-        display: 'flex',
-        alignItems: 'flex-end',
-        overflow: 'hidden',
-        backgroundColor: '#F8FAFC',
-      }}
-    >
-      {/* Background image with parallax */}
-      <motion.div
-        style={{
-          position: 'absolute', inset: 0,
-          y: prefersReduced ? 0 : imgY,
-        }}
-      >
-        <img
-          src="/images/hero_students_light.jpg"
-          alt="Students collaborating in bright sunlit tech campus"
-          style={{ width: '100%', height: '115%', objectFit: 'cover', objectPosition: 'center 30%' }}
-        />
-        {/* Crisp light gradient overlays */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to bottom, rgba(248,250,252,0.45) 0%, rgba(248,250,252,0.8) 45%, rgba(248,250,252,0.98) 85%, #F8FAFC 100%)',
-        }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'radial-gradient(ellipse at 25% 65%, rgba(29,78,216,0.06), transparent 60%)',
-        }} />
-      </motion.div>
-
-      {/* Hero content */}
-      <div className="container" style={{ position: 'relative', zIndex: 2, paddingBottom: '4.5rem', paddingTop: '4rem', width: '100%' }}>
-        <div style={{ maxWidth: 760 }}>
-
-          {/* Eyebrow */}
-          <motion.div {...wordAnim(0.08)} style={{ marginBottom: '1.25rem' }}>
-            <span className="text-eyebrow" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              backgroundColor: '#EFF6FF', padding: '0.35rem 0.85rem', borderRadius: 9999,
-              border: '1px solid rgba(29,78,216,0.2)', color: 'var(--accent-primary)',
-            }}>
-              <span style={{
-                display: 'inline-block', width: 6, height: 6,
-                borderRadius: '50%', background: 'var(--accent-primary)',
-              }} />
-              Launch Your Tech Career
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1 {...wordAnim(0.18)} className="text-display-xl"
-            style={{ color: 'var(--text-primary)', marginBottom: '1.25rem', lineHeight: 1.08 }}>
-            Turn Skills Into{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--accent-primary)' }}>Opportunities.</em>
-          </motion.h1>
-
-          {/* Subtext */}
-          <motion.p {...wordAnim(0.28)}
-            style={{ fontSize: '1.1875rem', color: 'var(--text-secondary)', marginBottom: '2.25rem', maxWidth: 560, lineHeight: 1.65 }}>
-            Industry-aligned courses, expert mentors, and guaranteed career support from leaders who build scalable tech products.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div {...wordAnim(0.38)} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem' }}>
-            <motion.a
-              href="#enquiry"
-              whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                padding: '0.875rem 1.75rem',
-                background: 'var(--accent-primary)',
-                color: '#fff', fontWeight: 600, fontSize: '1rem',
-                borderRadius: 'var(--radius-btn)',
-                textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(29,78,216,0.25)',
-              }}>
-              Enroll Now <ArrowRight size={18} weight="bold" />
-            </motion.a>
-            <motion.a
-              href="#courses"
-              whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                padding: '0.875rem 1.75rem',
-                background: '#FFFFFF',
-                border: '1px solid var(--border)',
-                color: 'var(--text-primary)', fontWeight: 600, fontSize: '1rem',
-                borderRadius: 'var(--radius-btn)',
-                textDecoration: 'none',
-                boxShadow: '0 2px 8px rgba(15,23,42,0.06)',
-              }}>
-              Explore Courses
-            </motion.a>
-          </motion.div>
-        </div>
-
-        {/* Trust stats strip */}
-        <motion.div
-          initial={prefersReduced ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+    <section id="hero" className="py-4 sm:py-6 bg-white">
+      <div className="container">
+        {/* Contained Hero Card - Exactly matching the reference image */}
+        <div
+          className="relative rounded-3xl md:rounded-[32px] overflow-hidden border border-[#DBEAFE]/80 p-6 sm:p-10 lg:p-12 xl:p-14"
           style={{
-            display: 'flex', flexWrap: 'wrap', gap: '1.25rem',
-            marginTop: '3rem',
-            paddingTop: '2rem',
-            borderTop: '1px solid var(--border)',
-          }}>
-          {TRUST_STATS.map(({ icon: Icon, value, label }) => (
-            <div
-              key={label}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '0.625rem',
-                backgroundColor: '#FFFFFF', border: '1px solid var(--border)',
-                padding: '0.5rem 1rem', borderRadius: 9999,
-                boxShadow: '0 1px 3px rgba(15,23,42,0.04)',
-              }}
-            >
-              <Icon size={18} color="var(--accent-primary)" weight="duotone" />
-              <span style={{ fontWeight: 700, fontSize: '0.9375rem', color: 'var(--text-primary)' }}>{value}</span>
-              <span style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>{label}</span>
+            background: 'linear-gradient(135deg, #F0F6FF 0%, #E8F1FD 50%, #F5F9FF 100%)',
+          }}
+        >
+          {/* Subtle Ambient Radial Glow */}
+          <div
+            className="absolute top-0 right-0 w-96 h-96 pointer-events-none opacity-40 rounded-full blur-3xl"
+            style={{ background: 'radial-gradient(circle, rgba(21, 94, 239, 0.15) 0%, transparent 70%)' }}
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+            {/* Left Column: Admissions, Headline, Bullets, CTAs */}
+            <div className="lg:col-span-7 flex flex-col items-start">
+              {/* Admissions Open Pill Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF9F1C] text-slate-950 font-bold text-xs uppercase tracking-wider mb-5 shadow-xs">
+                <GraduationCap size={16} weight="fill" />
+                <span>ADMISSIONS OPEN · BATCH 2026</span>
+              </div>
+
+              {/* Exact 3-color Headline: BUILD SKILLS. (Navy) / BUILD YOUR (Blue) / FUTURE. (Orange) */}
+              <h1 className="font-['Plus_Jakarta_Sans'] font-black tracking-tight leading-[1.06] text-4xl sm:text-5xl lg:text-[54px] xl:text-[58px] mb-4">
+                <span className="text-[#101B3C] block">BUILD SKILLS.</span>
+                <span className="block mt-1">
+                  <span className="text-[#155EEF]">BUILD YOUR </span>
+                  <span className="text-[#FF9F1C]">FUTURE.</span>
+                </span>
+              </h1>
+
+              {/* Sub-headline */}
+              <p className="font-['Inter'] text-slate-600 text-sm sm:text-base lg:text-lg max-w-xl mb-8 leading-relaxed">
+                Industry-led tech programs with live classes, hands-on projects and 1-on-1 mentorship from top engineers.
+              </p>
+
+              {/* Three Value-Proposition Bullets */}
+              <div className="space-y-4 mb-8 w-full max-w-lg">
+                {/* Item 1: Live Interactive Classes */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-full bg-blue-100/80 text-[#155EEF] flex items-center justify-center shrink-0">
+                    <Laptop size={20} weight="fill" />
+                  </div>
+                  <div>
+                    <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-sm sm:text-base text-[#101B3C] leading-snug">
+                      Live Interactive Classes
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                      Learn by doing with real-world projects
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 2: Mentorship from Industry Experts */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-full bg-amber-100/80 text-[#FF9F1C] flex items-center justify-center shrink-0">
+                    <UsersThree size={20} weight="fill" />
+                  </div>
+                  <div>
+                    <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-sm sm:text-base text-[#101B3C] leading-snug">
+                      Mentorship from Industry Experts
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                      Get guidance from senior engineers
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 3: Placement Support */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-full bg-emerald-100/80 text-emerald-600 flex items-center justify-center shrink-0">
+                    <Briefcase size={20} weight="fill" />
+                  </div>
+                  <div>
+                    <h2 className="font-['Plus_Jakarta_Sans'] font-bold text-sm sm:text-base text-[#101B3C] leading-snug">
+                      Placement Support
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                      Dedicated placement cell with 200+ hiring partners
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5">
+                <a
+                  href="#courses"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#155EEF] hover:bg-[#124BBF] text-white font-semibold text-sm sm:text-base transition-all shadow-sm active:scale-[0.98]"
+                >
+                  <span>Explore Programs</span>
+                  <ArrowRight size={16} weight="bold" />
+                </a>
+
+                <a
+                  href="#courses"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-semibold text-sm sm:text-base transition-all shadow-2xs"
+                >
+                  <span>View Curriculum</span>
+                </a>
+              </div>
             </div>
-          ))}
-          {/* sample data */}
-        </motion.div>
+
+            {/* Right Column: Hero Visual with Floating Cards */}
+            <div className="lg:col-span-5 relative flex justify-center">
+              {/* Decorative Accent Sparkle in top-right */}
+              <div className="absolute -top-3 -right-2 text-[#FF9F1C] pointer-events-none hidden sm:block">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" />
+                </svg>
+              </div>
+
+              <div className="relative w-full max-w-[520px] aspect-4/3 sm:aspect-16/11 lg:aspect-4/3 rounded-3xl overflow-hidden shadow-lg border border-slate-200/70 bg-slate-100">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80"
+                  alt="Students coding together on laptop in modern campus"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+
+                {/* Top-Left Floating Rating Badge */}
+                <div className="absolute top-4 left-4 p-2.5 px-3.5 rounded-xl bg-[#101B3C]/85 backdrop-blur-md text-white border border-white/15 shadow-lg">
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold">
+                    <Star size={14} weight="fill" className="text-amber-400" />
+                    <span>4.9/5 Learner Rating</span>
+                  </div>
+                  <span className="text-[11px] text-slate-300 block mt-0.5">
+                    10,000+ students trained
+                  </span>
+                </div>
+
+                {/* Bottom-Right Floating Mentorship Card */}
+                <div className="absolute bottom-4 right-4 p-3.5 px-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-100 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#155EEF] flex items-center justify-center shrink-0">
+                    <ChartLineUp size={20} weight="bold" />
+                  </div>
+                  <div>
+                    <span className="text-xs sm:text-sm font-bold text-[#101B3C] leading-snug block">
+                      Mentorship that moves you forward
+                    </span>
+                    <span className="text-[11px] text-slate-500 leading-snug block mt-0.5">
+                      Learn. Build. Grow. Get Hired.
+                    </span>
+                  </div>
+                  <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 ml-1">
+                    <CaretRight size={13} weight="bold" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Carousel Slide Indicators */}
+          <div className="pt-8 sm:pt-10 flex items-center justify-center gap-2 relative z-10">
+            <span className="w-6 h-2 bg-[#155EEF] rounded-full inline-block" />
+            <span className="w-2 h-2 bg-slate-300 rounded-full inline-block" />
+            <span className="w-2 h-2 bg-slate-300 rounded-full inline-block" />
+          </div>
+        </div>
       </div>
     </section>
   )
