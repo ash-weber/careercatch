@@ -1,4 +1,5 @@
 import { LinkedinLogo, TwitterLogo, InstagramLogo, YoutubeLogo } from '@phosphor-icons/react'
+import Logo from '../common/Logo'
 
 const FOOTER_COLS = [
   {
@@ -28,9 +29,7 @@ export default function Footer() {
           {/* Brand col */}
           <div style={{ gridColumn: 'span 1' }}>
             <div style={{ marginBottom: '0.75rem' }}>
-              <span className="font-display" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
-                CareerCatch
-              </span>
+              <Logo iconSize={32} />
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1.25rem', maxWidth: 220 }}>
               Careers Crafted. Skills Proven.
