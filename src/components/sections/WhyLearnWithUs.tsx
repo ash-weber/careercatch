@@ -35,7 +35,7 @@ export default function WhyLearnWithUs() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
           <motion.p {...reveal(0)} className="text-eyebrow" style={{ marginBottom: '0.75rem' }}>
-            Our Edge
+            Why Learn With Us
           </motion.p>
           <motion.h2 {...reveal(0.1)} className="text-display-l" style={{ color: 'var(--text-primary)' }}>
             Built for Outcomes, Not Certificates

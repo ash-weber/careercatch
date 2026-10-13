@@ -2,7 +2,6 @@ import Navbar from './components/layout/Navbar'
 import HeroBanner from './components/sections/HeroBanner'
 import Introduction from './components/sections/Introduction'
 import PopularCourses from './components/sections/PopularCourses'
-import CourseCategories from './components/sections/CourseCategories'
 import TechnologiesMarquee from './components/sections/TechnologiesMarquee'
 import WhyLearnWithUs from './components/sections/WhyLearnWithUs'
 import LearningMethodology from './components/sections/LearningMethodology'
@@ -31,9 +30,6 @@ export default function App() {
 
         {/* S03: Introduction - Learn by building real things (Exact match to Mockup bottom) */}
         <Introduction />
-
-        {/* S04: Course Categories */}
-        <CourseCategories />
 
         {/* S07: Technologies We Teach */}
         <TechnologiesMarquee />
