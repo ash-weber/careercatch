@@ -49,10 +49,10 @@ export default function EnquiryCTA() {
       <div className="container relative z-10 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-eyebrow mb-2">Enrollment &amp; Counseling</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-4">
             Start Your Career Journey Today
           </h2>
-          <p className="font-['Inter_Tight'] text-base md:text-lg text-slate-600 mb-12 max-w-xl mx-auto">
+          <p className="font-['Inter'] text-base md:text-lg text-slate-600 mb-12 max-w-xl mx-auto leading-relaxed">
             Join 10,000+ ambitious learners building in-demand tech skills. Request a detailed syllabus and scholarship evaluation.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function EnquiryCTA() {
             <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-200">
               <CheckCircle size={36} weight="fill" />
             </div>
-            <h3 className="font-['Outfit'] text-2xl font-bold text-slate-900 mb-2">
+            <h3 className="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-slate-900 mb-2">
               Enquiry Received!
             </h3>
             <p className="text-sm text-slate-600 mb-6">

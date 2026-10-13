@@ -21,10 +21,10 @@ export default function CareerOpportunities() {
               <Sparkle size={14} weight="fill" />
               <span>Career Outcomes</span>
             </div>
-            <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
               Where CareerCatch Alumni Work
             </h2>
-            <p className="font-['Inter_Tight'] text-base md:text-lg text-slate-600 mb-8 max-w-xl">
+            <p className="font-['Inter'] text-base md:text-lg text-slate-600 mb-8 max-w-xl leading-relaxed">
               From high-growth hyper-scaling startups to global Fortune 500 tech leaders, our hiring network actively recruits directly from our graduating cohorts.
             </p>
 
@@ -60,7 +60,7 @@ export default function CareerOpportunities() {
                   key={role.title}
                   className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs"
                 >
-                  <span className="font-['Outfit'] font-bold text-slate-900 text-sm block mb-1">
+                  <span className="font-['Plus_Jakarta_Sans'] font-bold text-slate-900 text-sm block mb-1">
                     {role.title}
                   </span>
                   <span className="text-xs font-bold text-amber-700 block">
@@ -109,10 +109,10 @@ export default function CareerOpportunities() {
                     <Briefcase size={22} weight="duotone" />
                   </div>
                   <div>
-                    <h4 className="font-['Outfit'] font-bold text-slate-900 text-sm">
+                    <h4 className="font-['Plus_Jakarta_Sans'] font-bold text-slate-900 text-sm">
                       CareerCatch Placement Cell
                     </h4>
-                    <p className="font-['Inter_Tight'] text-xs text-slate-600">
+                    <p className="font-['Inter'] text-xs text-slate-600">
                       Weekly mock HR drills &amp; automated ATS screening
                     </p>
                   </div>

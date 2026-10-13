@@ -61,10 +61,10 @@ export default function IndustrySkills() {
       <div className="container">
         <div className="mb-14">
           <p className="text-eyebrow mb-2">Curated Competencies</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             Skills Employers Actually Want
           </h2>
-          <p className="font-['Inter_Tight'] text-lg text-slate-600 max-w-2xl">
+          <p className="font-['Inter'] text-lg text-slate-600 max-w-2xl leading-relaxed">
             Our curricula map directly to live engineering vacancy requirements across tech hubs.
           </p>
         </div>
@@ -104,9 +104,9 @@ export default function IndustrySkills() {
                 {/* Content */}
                 <div>
                   <h3
-                    className={`font-['Outfit'] font-bold transition-all ${
+                    className={`font-['Plus_Jakarta_Sans'] font-bold transition-all ${
                       isActive
-                        ? 'text-2xl text-slate-900 mb-3'
+                        ? 'text-2xl text-slate-900 mb-3 tracking-tight'
                         : 'text-lg text-slate-700 [writing-mode:vertical-rl] rotate-180 tracking-wide mt-auto py-4'
                     }`}
                   >
@@ -115,7 +115,7 @@ export default function IndustrySkills() {
 
                   {isActive && (
                     <div className="space-y-4">
-                      <p className="font-['Inter_Tight'] text-sm text-slate-600">
+                      <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed">
                         {domain.description}
                       </p>
 
@@ -175,7 +175,7 @@ export default function IndustrySkills() {
                     }`}>
                       <Icon size={22} weight="duotone" />
                     </div>
-                    <span className="font-['Outfit'] font-bold text-slate-900 text-base">
+                    <span className="font-['Plus_Jakarta_Sans'] font-bold text-slate-900 text-base">
                       {domain.title}
                     </span>
                   </div>
@@ -189,7 +189,7 @@ export default function IndustrySkills() {
 
                 {isOpen && (
                   <div className="px-5 pb-6 pt-2 border-t border-slate-100 space-y-4">
-                    <p className="font-['Inter_Tight'] text-sm text-slate-600">
+                    <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed">
                       {domain.description}
                     </p>
                     <div className="flex flex-wrap gap-2">

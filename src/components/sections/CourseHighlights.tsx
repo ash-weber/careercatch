@@ -17,10 +17,10 @@ export default function CourseHighlights() {
       <div className="container">
         <div className="mb-14">
           <p className="text-eyebrow mb-2">Curriculum Standards</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             What&apos;s Inside Every Course
           </h2>
-          <p className="font-['Inter_Tight'] text-lg text-slate-600 max-w-2xl">
+          <p className="font-['Inter'] text-lg text-slate-600 max-w-2xl leading-relaxed">
             Everything you need to go from absolute beginner to industry-ready engineer, backed by deep support.
           </p>
         </div>
@@ -43,25 +43,25 @@ export default function CourseHighlights() {
               <span className="text-xs uppercase tracking-widest text-blue-700 font-semibold mb-2 block">
                 Production-Grade Syllabus
               </span>
-              <h3 className="font-['Outfit'] text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              <h3 className="font-['Plus_Jakarta_Sans'] text-2xl md:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">
                 Curriculum Designed by Senior FAANG &amp; Unicorn Leads
               </h3>
-              <p className="font-['Inter_Tight'] text-sm md:text-base text-slate-600 max-w-xl mb-6">
+              <p className="font-['Inter'] text-sm md:text-base text-slate-600 max-w-xl mb-6 leading-relaxed">
                 Zero outdated tutorials or toy demos. Learn architectural patterns, automated testing, system design, and battle-tested codebases.
               </p>
             </div>
 
             <div className="relative z-10 grid grid-cols-3 gap-3 pt-4 border-t border-slate-100">
               <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70">
-                <span className="text-xl font-bold text-slate-900 font-['Outfit'] block">40+</span>
+                <span className="text-xl font-extrabold text-slate-900 font-['Plus_Jakarta_Sans'] block">40+</span>
                 <span className="text-xs text-slate-500 font-medium">Hands-on Modules</span>
               </div>
               <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70">
-                <span className="text-xl font-bold text-slate-900 font-['Outfit'] block">120+</span>
+                <span className="text-xl font-extrabold text-slate-900 font-['Plus_Jakarta_Sans'] block">120+</span>
                 <span className="text-xs text-slate-500 font-medium">Coding Exercises</span>
               </div>
               <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70">
-                <span className="text-xl font-bold text-amber-700 font-['Outfit'] block">100%</span>
+                <span className="text-xl font-extrabold text-amber-700 font-['Plus_Jakarta_Sans'] block">100%</span>
                 <span className="text-xs text-slate-500 font-medium">Practical Repos</span>
               </div>
             </div>
@@ -79,13 +79,13 @@ export default function CourseHighlights() {
               <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-6 border border-blue-200/60">
                 <VideoCamera size={26} weight="duotone" />
               </div>
-              <span className="font-['Outfit'] text-3xl font-bold text-slate-900 block mb-1">
+              <span className="font-['Plus_Jakarta_Sans'] text-3xl font-extrabold text-slate-900 block mb-1">
                 3x / Week
               </span>
-              <h4 className="font-['Outfit'] text-lg font-semibold text-slate-900 mb-2">
+              <h4 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-slate-900 mb-2">
                 Live Interactive Sessions
               </h4>
-              <p className="font-['Inter_Tight'] text-sm text-slate-600">
+              <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed">
                 Real-time code along sessions with immediate feedback and screen-sharing help.
               </p>
             </div>
@@ -106,13 +106,13 @@ export default function CourseHighlights() {
               <div className="w-12 h-12 rounded-xl bg-purple-100/70 text-purple-700 flex items-center justify-center mb-6 border border-purple-200/80">
                 <Question size={26} weight="duotone" />
               </div>
-              <span className="font-['Outfit'] text-3xl font-bold text-slate-900 block mb-1">
+              <span className="font-['Plus_Jakarta_Sans'] text-3xl font-extrabold text-slate-900 block mb-1">
                 &lt; 15 Mins
               </span>
-              <h4 className="font-['Outfit'] text-lg font-semibold text-slate-900 mb-2">
+              <h4 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-slate-900 mb-2">
                 Fast Doubt Clearing
               </h4>
-              <p className="font-['Inter_Tight'] text-sm text-slate-600">
+              <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed">
                 Dedicated Teaching Assistants online 10 AM to 10 PM to unblock your coding errors.
               </p>
             </div>
@@ -133,13 +133,13 @@ export default function CourseHighlights() {
               <div className="w-12 h-12 rounded-xl bg-emerald-100/70 text-emerald-700 flex items-center justify-center mb-6 border border-emerald-200/80">
                 <TerminalWindow size={26} weight="duotone" />
               </div>
-              <span className="font-['Outfit'] text-3xl font-bold text-slate-900 block mb-1">
+              <span className="font-['Plus_Jakarta_Sans'] text-3xl font-extrabold text-slate-900 block mb-1">
                 6+ Capstones
               </span>
-              <h4 className="font-['Outfit'] text-lg font-semibold text-slate-900 mb-2">
+              <h4 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-slate-900 mb-2">
                 Production Deployments
               </h4>
-              <p className="font-['Inter_Tight'] text-sm text-slate-600">
+              <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed">
                 Deploy to Vercel, AWS, and Docker containers. Real domain URLs to impress recruiters.
               </p>
             </div>
@@ -160,13 +160,13 @@ export default function CourseHighlights() {
               <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6 border border-amber-200">
                 <Certificate size={26} weight="duotone" />
               </div>
-              <span className="font-['Outfit'] text-3xl font-bold text-amber-800 block mb-1">
+              <span className="font-['Plus_Jakarta_Sans'] text-3xl font-extrabold text-amber-800 block mb-1">
                 Verified ID
               </span>
-              <h4 className="font-['Outfit'] text-lg font-semibold text-slate-900 mb-2">
+              <h4 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-slate-900 mb-2">
                 Industry Certification
               </h4>
-              <p className="font-['Inter_Tight'] text-sm text-slate-600">
+              <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed">
                 Shareable on LinkedIn with tamper-proof credential IDs and mentor endorsements.
               </p>
             </div>
@@ -188,10 +188,10 @@ export default function CourseHighlights() {
                 <UsersThree size={32} weight="duotone" />
               </div>
               <div>
-                <h4 className="font-['Outfit'] text-xl md:text-2xl font-bold text-slate-900 mb-1">
+                <h4 className="font-['Plus_Jakarta_Sans'] text-xl md:text-2xl font-extrabold text-slate-900 mb-1">
                   1-on-1 Code Reviews &amp; Resume Audits
                 </h4>
-                <p className="font-['Inter_Tight'] text-sm text-slate-600 max-w-xl">
+                <p className="font-['Inter'] text-sm text-slate-600 max-w-xl leading-relaxed">
                   Get line-by-line PR feedback directly on GitHub from tech leads working at top product companies.
                 </p>
               </div>

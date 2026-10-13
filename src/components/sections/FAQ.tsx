@@ -30,7 +30,7 @@ export default function FAQ() {
           className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
           aria-expanded={isOpen}
         >
-          <span className="font-['Outfit'] font-bold text-slate-900 text-base md:text-lg">
+          <span className="font-['Plus_Jakarta_Sans'] font-bold text-slate-900 text-base md:text-lg">
             {faq.q}
           </span>
           <div
@@ -43,7 +43,7 @@ export default function FAQ() {
         </button>
 
         {isOpen && (
-          <div className="px-6 pb-6 pt-2 text-sm md:text-base text-slate-600 font-['Inter_Tight'] leading-relaxed border-t border-slate-100">
+          <div className="px-6 pb-6 pt-2 text-sm md:text-base text-slate-600 font-['Inter'] leading-relaxed border-t border-slate-100">
             {faq.a}
           </div>
         )}
@@ -56,10 +56,10 @@ export default function FAQ() {
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-eyebrow mb-2">Clarity &amp; Answers</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="font-['Inter_Tight'] text-base md:text-lg text-slate-600">
+          <p className="font-['Inter'] text-base md:text-lg text-slate-600 leading-relaxed">
             Got questions? We have answers. Find everything you need to know about enrollments, curriculum, and outcomes.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function FAQ() {
 
         {/* Still Have Questions Box */}
         <div className="mt-12 text-center p-8 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-xl mx-auto">
-          <h4 className="font-['Outfit'] text-lg font-bold text-slate-900 mb-2">
+          <h4 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-slate-900 mb-2">
             Still have questions before enrolling?
           </h4>
           <p className="text-xs text-slate-600 mb-4">

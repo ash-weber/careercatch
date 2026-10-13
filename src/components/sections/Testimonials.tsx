@@ -13,10 +13,10 @@ export default function Testimonials() {
       <div className="container">
         <div className="mb-16 text-center max-w-2xl mx-auto">
           <p className="text-eyebrow mb-2">Student Voices</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             What Our Students Say
           </h2>
-          <p className="font-['Inter_Tight'] text-base md:text-lg text-slate-600">
+          <p className="font-['Inter'] text-base md:text-lg text-slate-600 leading-relaxed">
             Genuine feedback from students who transformed their career trajectories with us.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function Testimonials() {
                     <Star key={i} size={18} weight="fill" />
                   ))}
                 </div>
-                <p className="font-['Inter_Tight'] text-lg md:text-xl text-slate-800 leading-relaxed font-normal">
+                <p className="font-['Inter'] text-lg md:text-xl text-slate-800 leading-relaxed font-normal">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
@@ -54,10 +54,10 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full object-cover border-2 border-blue-600"
                 />
                 <div>
-                  <h4 className="font-['Outfit'] font-bold text-slate-900 text-base">
+                  <h4 className="font-['Plus_Jakarta_Sans'] font-bold text-slate-900 text-base">
                     {item.name}
                   </h4>
-                  <p className="font-['Inter_Tight'] text-xs text-slate-500">
+                  <p className="font-['Inter'] text-xs text-slate-500">
                     {item.role} @ <span className="text-blue-700 font-semibold">{item.company}</span>
                   </p>
                 </div>
@@ -83,7 +83,7 @@ export default function Testimonials() {
                     <Star key={i} size={14} weight="fill" />
                   ))}
                 </div>
-                <p className="font-['Inter_Tight'] text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="font-['Inter'] text-sm text-slate-600 leading-relaxed mb-6">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
@@ -95,10 +95,10 @@ export default function Testimonials() {
                   className="w-9 h-9 rounded-full object-cover border border-slate-200"
                 />
                 <div className="min-w-0">
-                  <h4 className="font-['Outfit'] font-semibold text-slate-900 text-sm truncate">
+                  <h4 className="font-['Plus_Jakarta_Sans'] font-semibold text-slate-900 text-sm truncate">
                     {item.name}
                   </h4>
-                  <p className="font-['Inter_Tight'] text-[11px] text-slate-500 truncate">
+                  <p className="font-['Inter'] text-[11px] text-slate-500 truncate">
                     {item.role} &middot; <strong className="text-slate-700 font-medium">{item.company}</strong>
                   </p>
                 </div>

@@ -10,10 +10,10 @@ export default function TrainersMentors() {
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-eyebrow mb-2">Expert Faculty</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             Learn from Industry Insiders
           </h2>
-          <p className="font-['Inter_Tight'] text-base md:text-lg text-slate-600">
+          <p className="font-['Inter'] text-base md:text-lg text-slate-600 leading-relaxed">
             Direct 1:1 guidance from active senior engineers, architects, and designers at high-scale tech giants.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function TrainersMentors() {
 
                 {/* Details */}
                 <div className="flex items-center justify-between mb-1">
-                  <h3 className="font-['Outfit'] text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                  <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors tracking-tight">
                     {mentor.name}
                   </h3>
                   <a

@@ -49,10 +49,10 @@ export default function StudentAchievements() {
       <div className="container">
         <div className="mb-14 text-center max-w-2xl mx-auto">
           <p className="text-eyebrow mb-2">Proven Outcomes</p>
-          <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+          <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             Results Our Students Achieve
           </h2>
-          <p className="font-['Inter_Tight'] text-base md:text-lg text-slate-600">
+          <p className="font-['Inter'] text-base md:text-lg text-slate-600 leading-relaxed">
             Real career transformations from everyday ambition into high-impact engineering careers.
           </p>
         </div>
@@ -69,14 +69,14 @@ export default function StudentAchievements() {
               className="rounded-2xl p-8 md:p-10 bg-linear-to-br from-blue-700 via-blue-800 to-indigo-900 text-white shadow-xl shadow-blue-900/15 flex flex-col justify-between relative overflow-hidden"
             >
               <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none" />
-              <span className="font-['Outfit'] text-5xl md:text-6xl font-black tracking-tight block mb-2 text-white">
+              <span className="font-['Plus_Jakarta_Sans'] text-5xl md:text-6xl font-black tracking-tight block mb-2 text-white">
                 {item.value}
               </span>
               <div>
-                <h3 className="font-['Outfit'] text-lg font-semibold text-white/95">
+                <h3 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-white/95">
                   {item.label}
                 </h3>
-                <span className="text-xs text-blue-200/90 font-['Inter_Tight']">
+                <span className="text-xs text-blue-200/90 font-['Inter']">
                   {item.sub}
                 </span>
               </div>
@@ -108,7 +108,7 @@ export default function StudentAchievements() {
                   </span>
                 </div>
 
-                <h4 className="font-['Outfit'] text-lg font-bold text-slate-900 mb-1">
+                <h4 className="font-['Plus_Jakarta_Sans'] text-lg font-bold text-slate-900 mb-1 tracking-tight">
                   {student.name}
                 </h4>
                 <span className="text-xs text-blue-700 font-semibold block mb-4">

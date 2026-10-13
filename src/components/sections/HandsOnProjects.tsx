@@ -14,11 +14,11 @@ export default function HandsOnProjects() {
               <Sparkle size={14} weight="fill" />
               <span>Real Work</span>
             </div>
-            <h2 className="font-['Outfit'] text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
               Projects That Go in Your Portfolio
             </h2>
           </div>
-          <p className="font-['Inter_Tight'] text-sm md:text-base text-slate-600 max-w-md">
+          <p className="font-['Inter'] text-sm md:text-base text-slate-600 max-w-md leading-relaxed">
             Skip generic to-do apps. Build complex, real-world distributed architectures and client-ready products that prove your skills.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function HandsOnProjects() {
 
                   {/* Body */}
                   <div className="p-6">
-                    <h3 className="font-['Outfit'] text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
+                    <h3 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors tracking-tight">
                       {project.name}
                     </h3>
 
