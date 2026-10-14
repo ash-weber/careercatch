@@ -15,6 +15,7 @@ import CareerOpportunities from './components/sections/CareerOpportunities'
 import FAQ from './components/sections/FAQ'
 import EnquiryCTA from './components/sections/EnquiryCTA'
 import Footer from './components/layout/Footer'
+import FloatingEnrollButton from './components/common/FloatingEnrollButton'
 
 export default function App() {
   return (
@@ -70,6 +71,9 @@ export default function App() {
 
       {/* S19: Footer */}
       <Footer />
+
+      {/* Floating Sticky Enroll CTA (Bottom Left) */}
+      <FloatingEnrollButton />
     </div>
   )
 }
