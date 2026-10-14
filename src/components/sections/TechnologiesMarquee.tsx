@@ -55,7 +55,7 @@ export default function TechnologiesMarquee() {
                   minWidth: 100, flexShrink: 0,
                 }}>
                 <img
-                  src={`https://cdn.simpleicons.org/${tech.slug}/3B82F6`}
+                  src={(tech as { name: string; slug: string; iconUrl?: string }).iconUrl || (tech.slug === 'amazonaws' || tech.slug === 'aws' ? '/images/tech/aws.svg' : `https://cdn.simpleicons.org/${tech.slug}/3B82F6`)}
                   alt={tech.name}
                   style={{ width: 36, height: 36, objectFit: 'contain' }}
                   onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}

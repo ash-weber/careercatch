@@ -104,7 +104,7 @@ export const TECHNOLOGIES = [
   { name: "Node.js", slug: "nodedotjs" },
   { name: "Python", slug: "python" },
   { name: "TypeScript", slug: "typescript" },
-  { name: "AWS", slug: "amazonaws" },
+  { name: "AWS", slug: "amazonaws", iconUrl: "/images/tech/aws.svg" },
   { name: "Docker", slug: "docker" },
   { name: "MongoDB", slug: "mongodb" },
   { name: "PostgreSQL", slug: "postgresql" },
