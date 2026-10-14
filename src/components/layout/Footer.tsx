@@ -112,7 +112,7 @@ export default function Footer() {
           justifyContent: 'space-between', alignItems: 'center',
         }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.8125rem' }}>
-            © 2025 CareerCatch. All rights reserved.
+            © 2026 CareerCatch. All rights reserved.
           </p>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.8125rem' }}>
             Made with ❤️ in India 🇮🇳
