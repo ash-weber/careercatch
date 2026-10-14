@@ -233,12 +233,12 @@ export const FAQS = [
 ];
 
 export const PROJECTS = [
-  { name: "E-Commerce Platform", tags: ["React", "Node.js", "MongoDB"], img: "https://picsum.photos/seed/project-ecom/600/340" },
-  { name: "Data Analytics Dashboard", tags: ["Python", "Pandas", "Plotly"], img: "https://picsum.photos/seed/project-data/600/340" },
-  { name: "Mobile Banking App", tags: ["Flutter", "Firebase"], img: "https://picsum.photos/seed/project-banking/600/340" },
-  { name: "ML Recommendation Engine", tags: ["Python", "TensorFlow"], img: "https://picsum.photos/seed/project-ml/600/340" },
-  { name: "DevOps CI/CD Pipeline", tags: ["Docker", "AWS", "GitHub Actions"], img: "https://picsum.photos/seed/project-devops/600/340" },
-  { name: "Developer Portfolio Builder", tags: ["Next.js", "Tailwind"], img: "https://picsum.photos/seed/project-portfolio/600/340" },
+  { name: "E-Commerce Platform", tags: ["React", "Node.js", "MongoDB"], img: "/images/projects/ecommerce-platform.jpg" },
+  { name: "Data Analytics Dashboard", tags: ["Python", "Pandas", "Plotly"], img: "/images/projects/data-analytics.jpg" },
+  { name: "Mobile Banking App", tags: ["Flutter", "Firebase"], img: "/images/projects/mobile-banking.jpg" },
+  { name: "ML Recommendation Engine", tags: ["Python", "TensorFlow"], img: "/images/projects/ml-engine.jpg" },
+  { name: "DevOps CI/CD Pipeline", tags: ["Docker", "AWS", "GitHub Actions"], img: "/images/projects/devops-pipeline.jpg" },
+  { name: "Developer Portfolio Builder", tags: ["Next.js", "Tailwind"], img: "/images/projects/portfolio-builder.jpg" },
 ];
 
 export const HIRING_PARTNERS = [
