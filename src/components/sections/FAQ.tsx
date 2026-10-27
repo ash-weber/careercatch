@@ -1,6 +1,8 @@
+"use client"
+
 import { useState } from 'react'
 import { Plus, Minus } from '@phosphor-icons/react'
-import { FAQS } from '../../lib/constants'
+import { FAQS } from '@/lib/constants'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)

@@ -1,6 +1,8 @@
+"use client"
+
 import { motion, useReducedMotion } from 'motion/react'
 import { Star, Quotes } from '@phosphor-icons/react'
-import { TESTIMONIALS } from '../../lib/constants'
+import { TESTIMONIALS } from '@/lib/constants'
 
 export default function Testimonials() {
   const prefersReduced = useReducedMotion()

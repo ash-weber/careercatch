@@ -1,6 +1,8 @@
+"use client"
+
 import { motion, useReducedMotion } from 'motion/react'
 import { ArrowUpRight, GithubLogo, Sparkle } from '@phosphor-icons/react'
-import { PROJECTS } from '../../lib/constants'
+import { PROJECTS } from '@/lib/constants'
 
 export default function HandsOnProjects() {
   const prefersReduced = useReducedMotion()

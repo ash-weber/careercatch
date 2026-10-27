@@ -1,5 +1,7 @@
+"use client"
+
 import { useEffect, useRef } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
+import { useReducedMotion } from 'motion/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
@@ -222,7 +224,7 @@ function StepPreviewPanel({ stepIndex }: { stepIndex: number }) {
         {/* Mentor quote */}
         <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
           <p className="text-xs text-slate-700 italic leading-relaxed">
-            "Clean separation between domain logic and persistence layers. Deadlock handling and connection pooling are architected exactly how we do it on our production payments cluster."
+            &ldquo;Clean separation between domain logic and persistence layers. Deadlock handling and connection pooling are architected exactly how we do it on our production payments cluster.&rdquo;
           </p>
         </div>
 

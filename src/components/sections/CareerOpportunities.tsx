@@ -1,6 +1,8 @@
+"use client"
+
 import { motion, useReducedMotion } from 'motion/react'
 import { Briefcase, ArrowRight, CheckCircle, Sparkle } from '@phosphor-icons/react'
-import { HIRING_PARTNERS } from '../../lib/constants'
+import { HIRING_PARTNERS } from '@/lib/constants'
 
 const ROLES = [
   { title: 'Full Stack Developer', avgLpa: '₹8 - 18 LPA', openings: '1,400+ Openings' },

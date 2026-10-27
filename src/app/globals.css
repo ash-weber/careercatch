@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ── Recommended Design System Tokens ───────────────────────────── */
@@ -20,6 +19,8 @@
   --glow-hover:      0 12px 30px -4px rgba(21, 94, 239, 0.14), 0 4px 10px -2px rgba(16, 27, 60, 0.04);
   --radius-card:     18px;
   --radius-btn:      10px;
+  --font-inter:      var(--font-inter, 'Inter', system-ui, sans-serif);
+  --font-display:    var(--font-plus-jakarta-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
 }
 
 /* ── Reset ─────────────────────────────────────────────────────── */
@@ -29,17 +30,17 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ── Typography helpers ────────────────────────────────────────── */
-.font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+.font-display { font-family: var(--font-display); }
 
 .text-display-xl {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -47,7 +48,7 @@ body {
 }
 
 .text-display-l {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -55,7 +56,7 @@ body {
 }
 
 .text-heading {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -63,7 +64,7 @@ body {
 }
 
 .text-subheading {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.3;
@@ -141,7 +142,7 @@ body {
 
 /* ── Number counter shimmer ─────────────────────────────────────── */
 .number-accent {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-display);
   color: var(--accent-secondary);
 }
 

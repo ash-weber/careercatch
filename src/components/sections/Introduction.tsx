@@ -1,6 +1,8 @@
-import { useRef } from 'react'
+"use client"
+
+import { useRef, useEffect } from 'react'
 import { motion, useInView, useReducedMotion } from 'motion/react'
-import { Sparkle, CheckCircle } from '@phosphor-icons/react'
+import { CheckCircle } from '@phosphor-icons/react'
 
 function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -17,19 +19,28 @@ function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: stri
 function Counter({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true })
-  const start = Date.now()
-  const duration = 1400
 
-  if (inView && ref.current) {
+  useEffect(() => {
+    if (!inView || !ref.current) return
+    const start = Date.now()
+    const duration = 1400
+    let rafId: number
+
     const tick = () => {
       const elapsed = Date.now() - start
       const progress = Math.min(elapsed / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      if (ref.current) ref.current.textContent = `${Math.round(eased * target)}${suffix}`
-      if (progress < 1) requestAnimationFrame(tick)
+      if (ref.current) {
+        ref.current.textContent = `${Math.round(eased * target)}${suffix}`
+      }
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick)
+      }
     }
-    requestAnimationFrame(tick)
-  }
+
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
+  }, [inView, target, suffix])
 
   return <span ref={ref}>{0}{suffix}</span>
 }

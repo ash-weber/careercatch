@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface LogoProps {
   className?: string
   iconSize?: number
@@ -5,7 +7,7 @@ interface LogoProps {
 
 export default function Logo({ className = '', iconSize = 34 }: LogoProps) {
   return (
-    <a
+    <Link
       href="/"
       className={`inline-flex items-center gap-2.5 text-decoration-none group select-none ${className}`}
       aria-label="CareerCatch Home"
@@ -41,6 +43,6 @@ export default function Logo({ className = '', iconSize = 34 }: LogoProps) {
       <span className="font-['Plus_Jakarta_Sans'] font-extrabold text-[21px] tracking-tight text-[#101B3C] leading-none">
         CareerCatch
       </span>
-    </a>
+    </Link>
   )
 }

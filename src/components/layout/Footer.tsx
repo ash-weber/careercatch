@@ -1,3 +1,5 @@
+"use client"
+
 import { LinkedinLogo, TwitterLogo, InstagramLogo, YoutubeLogo } from '@phosphor-icons/react'
 import Logo from '../common/Logo'
 

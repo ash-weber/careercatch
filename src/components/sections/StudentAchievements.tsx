@@ -1,3 +1,5 @@
+"use client"
+
 import { motion, useReducedMotion } from 'motion/react'
 import {
   SealCheck,
@@ -332,7 +334,7 @@ export default function StudentAchievements() {
 
                 {/* Quote */}
                 <p className="text-xs text-slate-600 leading-relaxed italic line-clamp-2 mb-4 font-['Inter']">
-                  "{student.quote}"
+                  &ldquo;{student.quote}&rdquo;
                 </p>
               </div>
 

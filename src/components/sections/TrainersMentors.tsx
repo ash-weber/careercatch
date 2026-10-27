@@ -1,6 +1,8 @@
+"use client"
+
 import { motion, useReducedMotion } from 'motion/react'
 import { LinkedinLogo, Briefcase, Sparkle } from '@phosphor-icons/react'
-import { MENTORS } from '../../lib/constants'
+import { MENTORS } from '@/lib/constants'
 
 export default function TrainersMentors() {
   const prefersReduced = useReducedMotion()

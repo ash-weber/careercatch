@@ -1,9 +1,9 @@
 # 🎓 CareerCatch — Careers Crafted. Skills Proven.
 
-> **Modern, high-conversion tech education web application built with React 19, Vite, Tailwind CSS v4, Motion, GSAP, and Phosphor Icons.**
+> **Modern, high-conversion tech education web application built with Next.js 15 (App Router), React 19, Tailwind CSS v4, Motion, GSAP, and Phosphor Icons.**
 
+[![Next.js](https://img.shields.io/badge/Next.js-15.5.28-black?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6.3.5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.1.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-Private-slate.svg?style=flat-square)](#)
@@ -53,10 +53,10 @@ The website delivers an engaging, high-trust single-page experience combining cl
 
 | Layer | Technology | Version | Purpose |
 |---|---|---|---|
-| **Runtime & Framework** | [React](https://react.dev/) | `^19.1.0` | Modern UI component model with React DOM 19 |
-| **Bundler & Dev Server** | [Vite](https://vitejs.dev/) | `^6.3.5` | Lightning-fast HMR and optimized Rollup production bundling |
+| **Framework & Router** | [Next.js](https://nextjs.org/) | `^15.5.28` | Modern React framework with App Router, server components, and SEO |
+| **Runtime & Components** | [React](https://react.dev/) | `^19.1.0` | Modern UI component model with React DOM 19 |
 | **Language** | [TypeScript](https://www.typescriptlang.org/) | `~5.8.3` | End-to-end static type safety and interface validation |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | `^4.1.0` | Utility-first CSS engine with `@tailwindcss/vite` |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | `^4.1.0` | Utility-first CSS engine with `@tailwindcss/postcss` |
 | **Animation Engine** | [Motion](https://motion.dev/) | `^12.0.0` | Declarative physics, layout transitions, and spring animations |
 | **Scroll Choreography** | [GSAP](https://gsap.com/) | `^3.12.5` | Advanced timeline pinning and ScrollTrigger sequences |
 | **Iconography** | [Phosphor Icons](https://phosphoricons.com/) | `^2.1.7` | Cohesive, duotone vector icon system |
@@ -68,64 +68,29 @@ The website delivers an engaging, high-trust single-page experience combining cl
 ```
 Career-Catch/
 ├── docs/                             # Dedicated section documentation
-│   ├── README.md                     # Master Documentation Index & Overview
-│   ├── 00_SYSTEM_ARCHITECTURE.md     # Platform architecture, tokens, and data flow
-│   ├── 01_NAVBAR.md                  # Header navigation, dropdowns, and hotline
-│   ├── 02_HERO_BANNER.md             # Hero banner and popular tracks dock
-│   ├── 03_POPULAR_COURSES.md         # Filterable course directory
-│   ├── 04_INTRODUCTION.md            # Mission statement and animated counters
-│   ├── 05_TECHNOLOGIES_MARQUEE.md    # Infinite tech stack ribbon
-│   ├── 06_WHY_LEARN_WITH_US.md       # Alternating differentiators grid
-│   ├── 07_LEARNING_METHODOLOGY.md    # GSAP timeline & tactile simulators
-│   ├── 08_COURSE_HIGHLIGHTS.md       # Bento grid curriculum standards
-│   ├── 09_HANDS_ON_PROJECTS.md       # Staggered real-world portfolio capstones
-│   ├── 10_INDUSTRY_SKILLS.md         # Interactive domain salary explorer
-│   ├── 11_STUDENT_ACHIEVEMENTS.md    # Placement outcomes and alumni stories
-│   ├── 12_TRAINERS_MENTORS.md        # Faculty directory and credentials
-│   ├── 13_TESTIMONIALS.md            # Two-tier student social proof
-│   ├── 14_CAREER_OPPORTUNITIES.md    # Hiring partner network and placement cell
-│   ├── 15_FAQ.md                     # Two-column collapsible accordion
-│   ├── 16_ENQUIRY_CTA.md             # Admissions form and WhatsApp gateway
-│   ├── 17_FOOTER.md                  # Sitemap, newsletter, and legal policies
-│   ├── 18_FLOATING_ENROLL_BUTTON.md  # Sticky viewport conversion widget
-│   └── 19_SUPPLEMENTARY_COMPONENTS.md# Logo, categories bento, and promo CTA
-│
+│   └── ...
 ├── public/                           # Static assets, logos, and faculty portraits
 ├── src/
+│   ├── app/                          # Next.js App Router (Layouts & Pages)
+│   │   ├── layout.tsx                # Root layout with next/font & metadata
+│   │   ├── page.tsx                  # Home page server component
+│   │   ├── not-found.tsx             # Custom 404 page
+│   │   └── globals.css               # Design tokens & Tailwind CSS v4
 │   ├── components/
-│   │   ├── common/                   # Reusable atomic design primitives
-│   │   │   ├── FloatingEnrollButton.tsx
-│   │   │   └── Logo.tsx
-│   │   ├── layout/                   # Global page shell wrappers
-│   │   │   ├── Footer.tsx
-│   │   │   └── Navbar.tsx
-│   │   └── sections/                 # Primary page sections
-│   │       ├── CareerOpportunities.tsx
-│   │       ├── CourseCategories.tsx
-│   │       ├── CourseHighlights.tsx
-│   │       ├── EnquiryCTA.tsx
-│   │       ├── FAQ.tsx
-│   │       ├── HandsOnProjects.tsx
-│   │       ├── HeroBanner.tsx
-│   │       ├── IndustrySkills.tsx
-│   │       ├── Introduction.tsx
-│   │       ├── LearningMethodology.tsx
-│   │       ├── MainCourseCTA.tsx
-│   │       ├── PopularCourses.tsx
-│   │       ├── StudentAchievements.tsx
-│   │       ├── TechnologiesMarquee.tsx
-│   │       ├── Testimonials.tsx
-│   │       ├── TrainersMentors.tsx
-│   │       └── WhyLearnWithUs.tsx
+│   │   ├── common/                   # Reusable atomic design primitives (Logo, FloatingEnrollButton)
+│   │   ├── layout/                   # Global page shell wrappers (Navbar, Footer)
+│   │   └── sections/                 # Primary page sections (HeroBanner, PopularCourses, etc.)
 │   ├── lib/
-│   │   └── constants.ts              # Centralized data registries (courses, mentors, FAQs)
-│   ├── App.tsx                       # Main single-page application layout
-│   ├── index.css                     # Global styles, Tailwind v4 imports, tokens
-│   └── main.tsx                      # React 19 root bootstrap
+│   │   ├── constants.ts              # Centralized data registries (courses, mentors, FAQs)
+│   │   └── utils.ts                  # Classnames and utility helpers
+│   └── types/
+│       └── index.ts                  # Centralized TypeScript domain interfaces
 │
-├── package.json                      # Project dependencies and npm scripts
-├── tsconfig.json                     # TypeScript strict configuration
-└── vite.config.ts                    # Vite build configuration with Tailwind plugin
+├── next.config.ts                    # Next.js configuration & remote image patterns
+├── postcss.config.mjs                # PostCSS configuration for Tailwind v4
+├── package.json                      # Project dependencies and Next.js scripts
+├── tsconfig.json                     # TypeScript strict configuration (@/* -> ./src/*)
+└── vercel.json                       # Vercel deployment configuration
 ```
 
 ---
@@ -211,26 +176,26 @@ npm install
 ```bash
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:5173`.
+Open your browser and navigate to `http://localhost:3000`.
 
 ---
 
 ## 📦 Production Build & Deployment
 
 ### Build for Production
-To generate a type-checked, minified production build in the `dist/` directory:
+To generate a type-checked, optimized Next.js production build:
 ```bash
 npm run build
 ```
 
-### Preview Production Build Locally
-To test the generated production bundle locally:
+### Start Production Server Locally
+To run the generated production build locally:
 ```bash
-npm run preview
+npm run start
 ```
 
 ### Deployment Configuration
-The project includes a ready-to-use [`vercel.json`](file:///home/lokeshhh/Documents/Career-Catch/vercel.json) configuration for instant deployment on Vercel or similar static hosting platforms.
+The project is configured for seamless deployment on [Vercel](https://vercel.com/) with native Next.js detection via [`vercel.json`](file:///home/lokeshhh/Documents/Career-Catch/vercel.json).
 
 ---
 
