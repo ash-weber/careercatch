@@ -53,9 +53,7 @@ export default function Footer() {
           </div>
 
 
-          
 
-          {/* Link cols */}
           {FOOTER_COLS.map(col => (
             <div key={col.title}>
               <h4 className="font-display" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1rem', letterSpacing: '0.04em' }}>
